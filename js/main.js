@@ -5,7 +5,6 @@ function addAC() {
     
     var tbody = document.createElement('tbody');
     var tr = document.createElement('tr');
-    //tr.setAttribute('onclick', 'del_tr(this)')
 
     var name = document.createElement('td');
     var a = document.createElement('a');
