@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Patto Me</title>
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="icon" type="image/png" href="img/PattoMe_icon.png"
+    </head>
+    <body>
+        <header class="header">
+                <img class="logo" src="img/PattoMe_icon.png" alt="PattoMe">
+                <h1>Patto Me</h1>
+        </header>
+        
+        <div class="container">
+            
+            <div class="item newData">
+                <h2>New Account Data</h2>
+                <form id="new_ACData" class="form_container" onsubmit="addAC(); return false;">
+
+                    <h3>サービス</h3>
+                    <div class="form_service">
+                        <div class="form_item">
+                            <input class="ef" type="text" name="name" id="name" placeholder="" required>
+                            <label for="name">サービス名</label>
+                            <span class="focus_line"></span>
+                        </div>
+                        <div class="form_item">
+                            <input class="ef" type="url" name="url" id="url" placeholder="">
+                            <label for="url">URL</label>
+                            <span class="focus_line"></span>
+                        </div>
+                    </div>
+
+                    <h3>ID</h3>
+                    <div class="form_ID"> 
+                        <div class="form_item">
+                            <input class="ef" type="text" name="myID" id="ID" placeholder="">
+                            <label for="ID">ID</label>
+                            <span class="focus_line"></span>
+                        </div>
+                        <div class="form_item">
+                            <input class="ef" type="text" name="mail" id="domain" list="mail" placeholder="">
+                            <label for="domain">ドメイン名</label>
+                            <datalist id="mail">
+                                <option value="@ed.ritsumei.ac.jp">@ed.ritsumei.ac.jp</option>
+                                <option value="@gmail.com">@gmail.com</option>
+                                <oprion value="@outlook.jp">@outlook.jp</oprion>
+                                <option value="@docomo.ne.jp">@docomo.ne.jp</option>
+                            </datalist>
+                            <span class="focus_line"></span>
+                        </div>
+                    </div>
+
+                    <h3>パスワード</h3>
+                    <div class="form_pass">
+                        <div class="form_num">
+                            <div class="form_item">
+                                <input class="ef" type="number" name="min" min="0"><span>字以上</span>
+                                <span class="focus_line"></span>
+                                
+                            </div>
+                            
+                            <div class="form_item">
+                                <input class="ef" type="number" name="max" min="0"><span>字以内</span>
+                                <span class="focus_line"></span>
+                            </div>
+                            
+                        </div>
+                    
+                        <div class="form_item">
+                            <input type="checkbox" name="pass" id="large" value="大文字">
+                            <label for="large" class="cb">大文字</label>
+                            <input type="checkbox" name="pass" id="small" value="小文字">
+                            <label for="small" class="cb">小文字</label>
+                            <input type="checkbox" name="pass" id="number" value="数字">
+                            <label for="number" class="cb">数字</label>
+                            <input type="checkbox" name="pass" id="symbol" value="記号">
+                            <label for="symbol" class="cb">記号</label>
+                        </div>
+                    </div>
+
+                    <div class="form_btn">
+                        <div class="form_item">
+                            <input class="addbtn" type="submit" value="リストに追加" id="btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="item">
+                <div class="rhead">
+                    <h2>My Account List</h2>
+                    <div class="import">
+                        <input type="file" id="importAC" style="display: none;">
+                        <button id="impbtn" type="button">ファイルを読み込む</button>
+                    </div>
+                </div>
+                <table id="ACtable">
+                    <thead>
+                        <tr>
+                            <th class="tr_name" rowspan="2">サービス名</th>
+                            <th class="tr_url" rowspan="2">URL</th>
+                            <th class="tr_ID" rowspan="2">ID</th>
+                            <th class="tr_pass" colspan="2">パスワードの条件</th>
+                            <th class="tr_btn" rowspan="2"></th>
+                        </tr>
+                        <tr>
+                            <th class="tr_num">文字数</th>
+                            <th></th>
+                            <th class="tr_item">必要な文字種</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <div class="export">
+                    <button id="expbtn" href="#" onclick="exportACtable()">リストを保存</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    </body>
+</html>

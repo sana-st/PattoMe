@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import url("https://use.typekit.net/ieh3qig.css");
+
+:root {
+    font-size: 100%;
+    --main-color: #00bfff;
+    --default-color: #aaaaaa;
+    --pale-color: #e0f7ff;
+    --shadow-color: #adceda;
+    --font-color: #313131;
+    --delete-color: #ff8383;
+}
